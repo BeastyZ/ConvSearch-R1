@@ -1,2 +1,2 @@
 # ConvSearch-R1
-Official repo for paper ConvSearch-R1
+Under review, data, code, and models will be open-sourced soon.
