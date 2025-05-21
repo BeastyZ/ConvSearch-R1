@@ -1,5 +1,5 @@
 # ConvSearch-R1
-Under review, data, code, and models will be open-sourced soon.
+Bytedance Inc is still approving the open source request, and the approximate open source time is around June 1st.
 
 
 # News
