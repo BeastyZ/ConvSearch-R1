@@ -12,3 +12,4 @@ outputs
 wandb
 logs
 
+verl.egg-info
