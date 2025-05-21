@@ -1,0 +1,14 @@
+__pycache__
+.cache
+.config
+.triton
+.nv
+
+ckpt
+data
+embedding
+index
+outputs
+wandb
+logs
+
