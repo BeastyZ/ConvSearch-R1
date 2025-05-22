@@ -23,6 +23,69 @@ We have open-sourced the data used for SFT, as well as the final four models.
 | [ Llama3.2-3B-ConvSearch-R1-QReCC 🤗](https://huggingface.co/BeastyZ/Llama3.2-3B-ConvSearch-R1-QReCC) | Trained on QReCC using GRPO | [Llama3.2-3B-SFT-QReCC 🤗](https://huggingface.co/datasets/BeastyZ/Llama3.2-3B-SFT-QReCC) |Self-distilled from QReCC using Llama3.2-3B|
 
 
+# 💻 Usage
+```python
+from vllm import LLM, SamplingParams
+
+example = """Given a query and its context, you must first think about the reasoning process in the mind to decontextualize the query by resolving \
+coreference and omission issues. Then, provide the user with a rewrite that retains its original meaning and is as informative as possible to help \
+search engines retrieve relevant documents effectively. The reasoning process and rewrite should be enclosed within <think> </think> and <rewrite> </rewrite> tags, respectively, i.e., \
+<think> reasoning process here </think>\n<rewrite> rewrite here </rewrite>.
+
+### Context Begin ###
+Q1: what can you tell me about Gaelic Ireland Dress?
+A1: The common clothing amongst the Gaelic Irish consisted of a woollen semi circular cloak worn over a loose-fitting, long-sleeved tunic made of linen.
+Q2: did they wear any other clothing distinction?
+A2: For men the léine reached to their ankles but was hitched up by means of a woven belt. The léine was hitched up to knee level.
+Q3: Did they have any other distinction in their clothing?
+A3: The cloak was simply thrown over both shoulders or sometimes over only one.
+Q4: Any other distinction for the women?
+A4: Women wore the léine at full length, rather than knee length for men.
+Q5: did they wear their hair up or down?
+A5: Women invariably grew their hair long and, as in other European cultures, this custom was also common among the men.
+Q6: What other things did they wear?
+A6: A short, tight-fitting jacket became popular later on and the Irish commonly wore hoods at that time
+### Context End ###
+
+Query: What is a leine?
+Rewrite:"""
+
+model_name_or_path = 'BeastyZ/Qwen2.5-3B-ConvSearch-R1-TopiOCQA'
+
+sampling_params = SamplingParams(
+    temperature=0.7,
+    max_tokens=4096
+)
+llm = LLM(
+    model=model_name_or_path,
+    tensor_parallel_size=1,
+    enforce_eager=False,
+    gpu_memory_utilization=0.8,
+    dtype='bfloat16',
+)
+conv = [
+    {
+        'role': 'user',
+        'content': example,
+    }
+]
+outputs = llm.chat(conv, sampling_params, add_generation_prompt=True)
+for output in outputs:
+    generated_text = output.outputs[0].text
+    print(generated_text)
+
+""" Reference Answer:
+<think> The user is asking for a definition or explanation of the term "léine," which is mentioned in the previous context. \
+The term "léine" refers to a specific type of garment worn by the Gaelic Irish. Based on the previous context, \
+the léine was described as a linen tunic worn by both men and women. The query seeks a definition or explanation of this term. </think>
+<rewrite> What is a léine? The léine is a traditional Irish garment, a loose-fitting, long-sleeved tunic made of linen. \
+It was a common piece of clothing among the Gaelic Irish. The term "léine" is derived from the Old Irish word "lín," meaning "garment." \
+It typically reached to the ankles for men and at full length for women. The léine was a significant part of the Gaelic Irish's clothing, \
+often worn with a cloak and other accessories. </rewrite>
+"""
+
+```
+
 # 🛠️ Installation
 Since training process involves retrieval and RL, to avoid interference between environments, retrieval and RL use their own separate environments.
 
