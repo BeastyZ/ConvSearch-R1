@@ -1,16 +1,16 @@
-# ConvSearch-R1
+# 📖 ConvSearch-R1
 ConvSearch-R1 is a two-stage alignment framework designed for conversational search, with a focus on **conversational query reformulation (CQR)**. To the best of our knowledge, ConvSearch-R1 is the first method to perform the CQR task **without any external supervised data (reference rewrite)**, achieving **SOTA** performance on the TopiOCQA and QReCC datasets.
 
 <img src="./assets/framework.png" width="700" style="display: block; margin: 0 auto;"/>
 
 
-# News
+# 📣 News
 **[2025/05/10]** Initialize repo.
 
 **[2025/05/21]** Release all code, datasets, and models.
 
 
-# Release
+# 📌 Release
 We have open-sourced the data used for SFT, as well as the final four models.
 
 |Model| From| Dataset | From|
@@ -47,7 +47,7 @@ cd verl
 pip3 install -e .
 ```
 
-# Training
+# 🔥 Training
 Verl only supports data in **Parquet** format, and both the data for SFT and GRPO must follow this format.
 
 For the code to preprocess the SFT and GRPO data, please refer to directory [data_preprocess](./verl/examples/data_preprocess).
@@ -149,7 +149,7 @@ python3 -m verl.trainer.main_ppo \
     retriever.topk=100 $@ 2>&1 | tee logs/${DATE}_${EXPERIMENT_NAME}.log
 ```
 
-# Inference
+# 🤖 Inference
 We need to collect data for evaluation. For more examples about inference, see [infer](./src/infer).
 ```bash
 conda activate verl
@@ -164,7 +164,7 @@ python3 src/infer/infer.py \
     --output_path path/to/your/output
 ```
 
-# Evaluation
+# 👨‍⚖️ Evaluation
 For more details about evaluation, see [eval](./src/eval).
 ```bash
 conda activate retriever
@@ -180,11 +180,19 @@ python3 src/eval/get_metrics_using_ance.py \
     --test_type rewrite
 ```
 
-# Acknowledgement
+# 🙏 Acknowledgement
 We use verl for SFT and GRPO: https://github.com/volcengine/verl
 
 
-# Citation
+# 👋 Citation
 ```
-To be added.
+@misc{zhu2025convsearchr1enhancingqueryreformulation,
+      title={ConvSearch-R1: Enhancing Query Reformulation for Conversational Search with Reasoning via Reinforcement Learning}, 
+      author={Changtai Zhu and Siyin Wang and Ruijun Feng and Kai Song and Xipeng Qiu},
+      year={2025},
+      eprint={2505.15776},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2505.15776}, 
+}
 ```
