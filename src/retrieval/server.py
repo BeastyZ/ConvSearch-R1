@@ -332,7 +332,7 @@ if __name__ == '__main__':
     parser.add_argument('--max_length', type=int, default=512, help='Max length of the query.')
     parser.add_argument('--retrieval_batch_size', type=int, default=64, help='Batch size for retrieval.')
     parser.add_argument('--port', type=int, required=True)
-    parser.add_argument('--host', type=str, default='::')
+    parser.add_argument('--host', type=str, default='0.0.0.0')
 
     bm25_parser = parser.add_argument_group('bm25')
     bm25_parser.add_argument("--bm25_k1", type=float, default=0.9)   # 0.82 for qrecc, 0.9 for topiocqa
@@ -340,9 +340,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     retriever = get_retriever(args)
-
-    # Launch the server. By default, it listens on http://127.0.0.1:8000
-    # host = "::" if args.retriever_name == 'ance' else "0.0.0.0"
-    # host = "::"
-    # print(f'host: {host}')
     uvicorn.run(app, host=args.host, port=args.port)
