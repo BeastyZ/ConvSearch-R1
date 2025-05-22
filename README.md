@@ -21,7 +21,7 @@ We have open-sourced the data used for SFT, as well as the final four models.
 | [ Llama3.2-3B-ConvSearch-R1-QReCC 🤗](https://huggingface.co/BeastyZ/Llama3.2-3B-ConvSearch-R1-QReCC) | Trained on QReCC using GRPO | [Llama3.2-3B-SFT-QReCC 🤗](https://huggingface.co/datasets/BeastyZ/Llama3.2-3B-SFT-QReCC) |Self-distilled from QReCC using Llama3.2-3B|
 
 
-# Installation
+# 🛠️ Installation
 Since training process involves retrieval and RL, to avoid interference between environments, retrieval and RL use their own separate environments.
 
 Setup for retrieval
