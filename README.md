@@ -1,5 +1,5 @@
 # 📖 ConvSearch-R1
-ConvSearch-R1 is a two-stage alignment framework designed for conversational search, with a focus on **conversational query reformulation (CQR)**. To the best of our knowledge, ConvSearch-R1 is the first method to perform the CQR task **without any external supervised data (reference rewrite)**, achieving **SOTA** performance on the TopiOCQA and QReCC datasets.
+ConvSearch-R1 is a two-stage alignment framework designed for conversational search, with a focus on **conversational query reformulation (CQR)**. To the best of our knowledge, ConvSearch-R1 is the first method to perform the CQR task **without any external supervised data (reference rewrite)**, achieving **SOTA** performance on the TopiOCQA and QReCC datasets. [[arXiv](https://arxiv.org/abs/2505.15776)]
 
 <img src="./assets/framework.png" width="700" style="display: block; margin: 0 auto;"/>
 
@@ -8,6 +8,8 @@ ConvSearch-R1 is a two-stage alignment framework designed for conversational sea
 **[2025/05/10]** Initialize repo.
 
 **[2025/05/21]** Release all code, datasets, and models.
+
+**[2025/05/22]** Publish our paper to arXiv.
 
 
 # 📌 Release
