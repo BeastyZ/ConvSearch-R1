@@ -1,0 +1,1 @@
+All scripts in the current directory are adapted from https://github.com/fengranMark/CHIQ/tree/main/bm25
