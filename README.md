@@ -3,14 +3,14 @@ ConvSearch-R1 is a two-stage alignment framework designed for conversational sea
 
 <img src="./assets/framework.png" width="700" style="display: block; margin: 0 auto;"/>
 
-
 # 📣 News
 **[2025/05/10]** Initialize repo.
 
 **[2025/05/21]** Release all code, datasets, and models.
 
-**[2025/05/22]** Publish our paper to arXiv.
+**[2025/05/22]** Publish our paper to [arXiv](https://arxiv.org/abs/2505.15776).
 
+**[2025/06/12]** Accepted by ICML 2025 Workshop VecDB.
 
 # 📌 Release
 We have open-sourced the data used for SFT, as well as the final four models.
@@ -83,7 +83,6 @@ It was a common piece of clothing among the Gaelic Irish. The term "léine" is d
 It typically reached to the ankles for men and at full length for women. The léine was a significant part of the Gaelic Irish's clothing, \
 often worn with a cloak and other accessories. </rewrite>
 """
-
 ```
 
 # 🛠️ Installation
