@@ -4,13 +4,13 @@ ConvSearch-R1 is a two-stage alignment framework designed for conversational sea
 <img src="./assets/framework.png" width="700" style="display: block; margin: 0 auto;"/>
 
 # 📣 News
-**[2025/05/10]** Initialize repo.
-
-**[2025/05/21]** Release all code, datasets, and models.
+**[2025/06/12]** Accepted by ICML 2025 Workshop [VecDB](https://vecdb-ws.github.io/icml2025/).
 
 **[2025/05/22]** Publish our paper to [arXiv](https://arxiv.org/abs/2505.15776).
 
-**[2025/06/12]** Accepted by ICML 2025 Workshop VecDB.
+**[2025/05/21]** Release all code, datasets, and models.
+
+**[2025/05/10]** Initialize repo.
 
 # 📌 Release
 We have open-sourced the data used for SFT, as well as the final four models.
