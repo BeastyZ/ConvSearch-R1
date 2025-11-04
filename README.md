@@ -4,7 +4,7 @@ ConvSearch-R1 is a two-stage alignment framework designed for conversational sea
 <img src="./assets/framework-4.png" width="700" style="display: block; margin: 0 auto;"/>
 
 # 📣 News
-**[2025/08/21]** Accepted by EMNLP 2025 at the Main Conference 🎉.
+**[2025/08/21]** Accepted by EMNLP 2025 at the Main Conference 🎉. [[paper](https://aclanthology.org/2025.emnlp-main.1349/)]
 
 **[2025/06/12]** Accepted by ICML 2025 Workshop [VecDB](https://vecdb-ws.github.io/icml2025/).
 
